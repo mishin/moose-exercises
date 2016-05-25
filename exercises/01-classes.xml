@@ -1,0 +1,64 @@
+<testsuites>
+  <testsuite name="01-classes" tests="18" errors="1" failures="2">
+    <testcase name="1 - use Person;" classname="t.01-classes" ></testcase>
+    <testcase name="2 - Person has a meta() method"></testcase>
+    <testcase name="3 - Person has 1 parent"></testcase>
+    <testcase name="4 - parent[0] is Moose::Object"></testcase>
+    <testcase name="5 - Person has a first_name attribute"></testcase>
+    <testcase name="6 - first_name attribute has a reader accessor - first_name()"></testcase>
+    <testcase name="7 - first_name attribute has a writer accessor - first_name()"></testcase>
+    <testcase name="8 - Person has a last_name attribute"></testcase>
+    <testcase name="9 - last_name attribute has a reader accessor - last_name()"></testcase>
+    <testcase name="10 - last_name attribute has a writer accessor - last_name()"></testcase>
+    <testcase name="11 - Person has a full_name method"></testcase>
+    <testcase name="12 - full_name() is correctly implemented"></testcase>
+    <testcase name="13 - Person-&gt;new() can accept an array reference as an argument"></testcase>
+    <testcase name="14 - set first_name from two-arg arrayref"></testcase>
+    <testcase name="15 - set last_name from two-arg arrayref"></testcase>
+    <testcase name="16 - Person constructor still rejects bad parameters">
+      <failure type="TestFailed"
+               message="not ok 16 - Person constructor still rejects bad parameters"><![CDATA[not ok 16 - Person constructor still rejects bad parameters
+#   Failed test 'Person constructor still rejects bad parameters'
+#   at t/lib/MooseClass/Tests.pm line 575.
+#                   ''
+#     doesn't match '(?^:Single\ parameters\ to\ new\(\)\ must\ be\ a\ HASH\ ref)']]></failure>
+    </testcase>
+    <testcase name="17 - use Employee;"></testcase>
+    <testcase name="18 - Employee has a meta() method">
+      <failure type="TestFailed"
+               message="not ok 18 - Employee has a meta() method"><![CDATA[not ok 18 - Employee has a meta() method
+#   Failed test 'Employee has a meta() method'
+#   at t/lib/MooseClass/Tests.pm line 23.
+Employee does not have a meta() method (did you forget to 'use Moose'?)]]></failure>
+    </testcase>
+    <system-out><![CDATA[ok 1 - use Person;
+ok 2 - Person has a meta() method
+ok 3 - Person has 1 parent
+ok 4 - parent[0] is Moose::Object
+ok 5 - Person has a first_name attribute
+ok 6 - first_name attribute has a reader accessor - first_name()
+ok 7 - first_name attribute has a writer accessor - first_name()
+ok 8 - Person has a last_name attribute
+ok 9 - last_name attribute has a reader accessor - last_name()
+ok 10 - last_name attribute has a writer accessor - last_name()
+ok 11 - Person has a full_name method
+ok 12 - full_name() is correctly implemented
+ok 13 - Person->new() can accept an array reference as an argument
+ok 14 - set first_name from two-arg arrayref
+ok 15 - set last_name from two-arg arrayref
+The new() method for Person expects a hash reference or a key/value list. You passed an odd number of arguments at C:/Perl/strawberry-perl-5.22.1.2-64bit/perl/vendor/lib/Class/MOP/Method/Wrapped.pm line 164.
+not ok 16 - Person constructor still rejects bad parameters
+#   Failed test 'Person constructor still rejects bad parameters'
+#   at t/lib/MooseClass/Tests.pm line 575.
+#                   ''
+#     doesn't match '(?^:Single\ parameters\ to\ new\(\)\ must\ be\ a\ HASH\ ref)'
+ok 17 - use Employee;
+not ok 18 - Employee has a meta() method
+#   Failed test 'Employee has a meta() method'
+#   at t/lib/MooseClass/Tests.pm line 23.
+Bail out!  Employee does not have a meta() method (did you forget to 'use Moose'?)
+]]></system-out>
+    <system-err></system-err>
+    <error message="No plan in TAP output" />
+  </testsuite>
+</testsuites>

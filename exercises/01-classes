@@ -1,0 +1,26 @@
+ok 1 - use Person;
+ok 2 - Person has a meta() method
+ok 3 - Person has 1 parent
+ok 4 - parent[0] is Moose::Object
+ok 5 - Person has a first_name attribute
+ok 6 - first_name attribute has a reader accessor - first_name()
+ok 7 - first_name attribute has a writer accessor - first_name()
+ok 8 - Person has a last_name attribute
+ok 9 - last_name attribute has a reader accessor - last_name()
+ok 10 - last_name attribute has a writer accessor - last_name()
+ok 11 - Person has a full_name method
+ok 12 - full_name() is correctly implemented
+ok 13 - Person->new() can accept an array reference as an argument
+ok 14 - set first_name from two-arg arrayref
+ok 15 - set last_name from two-arg arrayref
+The new() method for Person expects a hash reference or a key/value list. You passed an odd number of arguments at C:/Perl/strawberry-perl-5.22.1.2-64bit/perl/vendor/lib/Class/MOP/Method/Wrapped.pm line 164.
+not ok 16 - Person constructor still rejects bad parameters
+#   Failed test 'Person constructor still rejects bad parameters'
+#   at t/lib/MooseClass/Tests.pm line 575.
+#                   ''
+#     doesn't match '(?^:Single\ parameters\ to\ new\(\)\ must\ be\ a\ HASH\ ref)'
+ok 17 - use Employee;
+not ok 18 - Employee has a meta() method
+#   Failed test 'Employee has a meta() method'
+#   at t/lib/MooseClass/Tests.pm line 23.
+Bail out!  Employee does not have a meta() method (did you forget to 'use Moose'?)
