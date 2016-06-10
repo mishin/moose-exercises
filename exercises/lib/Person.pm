@@ -1,27 +1,32 @@
 package Person;
 use Moose;
 
+with 'Printable';
+
 has first_name => ( is => 'rw' );
 has last_name  => ( is => 'rw' );
 
 sub BUILDARGS {
-    my $class = shift;
+	my $class = shift;
 
-    if ( @_ == 1 && 'ARRAY' eq ref $_[0] ) {
-        return {
-            first_name => $_[0]->[0],
-            last_name  => $_[0]->[1],
-        };
-    }
-    else {
-        return $class->SUPER::BUILDARGS(@_);
-    }
+	if ( @_ == 1 && 'ARRAY' eq ref $_[0] ) {
+		return {
+			first_name => $_[0]->[0],
+			last_name  => $_[0]->[1],
+		};
+	}
+	else {
+		return $class->SUPER::BUILDARGS(@_);
+	}
 }
+
 sub full_name {
 	my $self = shift;
 
 	return join q{ }, $self->first_name, $self->last_name;
 }
+
+sub as_string { $_[0]->full_name() }
 
 no Moose;
 
